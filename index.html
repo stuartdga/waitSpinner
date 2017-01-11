@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wait Indicator Example</title>
+    <link href="waitSpinner.css" type="text/css" rel="stylesheet">
+    <script src="waitSpinner.js"></script>
+</head>
+<body>
+<div id="wait-spinner-overlay" class="wait-spinner-overlay"></div>
+<div id="wait-spinner" class="wait-spinner">
+    <div id="spinner" class="spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+</div>
+<a href="#" onclick="showSpinner(5000)">Show wait spinner for 5 seconds</a>
+<script>
+    function sleep(milleseconds) {
+        return new Promise(resolve => setTimeout(resolve, milleseconds));
+    }
+
+    function showSpinner(milleseconds) {
+        showWaitSpinner();
+        sleep(milleseconds).then(() => {
+            hideWaitSpinner();
+        });
+    }
+
+    // always hide on loading the page
+    hideWaitSpinner();
+</script>
+</body>
+</html>
