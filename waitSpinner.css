@@ -1,5 +1,5 @@
 ﻿.spinner { display: inline-block; position: relative; width: 40px; height: 40px; }
-.spinner > * { position: absolute; left: 15px; top: 15px; width: 3px; height: 10px; background: #333; border-radius: 4px; opacity: 0;
+.spinner > * { position: absolute; left: 15px; top: 30px; width: 3px; height: 10px; background: #333; border-radius: 4px; opacity: 0;
     -webkit-animation: fade 1s linear infinite;
     -moz-animation: fade 1s linear infinite;
     -ms-animation: fade 1s linear infinite;
@@ -106,7 +106,7 @@
 }
 
 .wait-spinner {
-    position: absolute;
+    position: fixed;
     left: calc(50% - 20px); /*20px is half of the spinners width*/
     display: block;
     z-index: -1;
@@ -114,7 +114,7 @@
 
 /* Transparent Overlay */
 .wait-spinner-overlay {
-    position: absolute;
+    position: fixed;
     display: block;
     top: 0;
     left: 0;
